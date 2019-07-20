@@ -15,17 +15,12 @@ with open('daily_trades.csv') as file:
 	starting_date = datetime.strptime(start, date_format) - timedelta(1)
 	size = (datetime.strptime(end, date_format) - starting_date).days + 1
 	for row in reader:
-		if first_row == False:
+		if first_row == False and row[8] != "":
 			company_id = int(row[1])
 			date_string = row[5][:10]
 			date = datetime.strptime(date_string, date_format)
 			day = (date - starting_date).days
-			close_string = str(row[8])
-			try:
-				close = float(close_string)
-			except ValueError,e:
-				# ipdb.set_trace()				
-				print e
+			close = float(row[8])
 			if company_id not in data:
 				data[company_id] = [None] * size
 			if day >= 0 and day < size:

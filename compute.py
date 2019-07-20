@@ -2,7 +2,10 @@ import pickle
 from scipy import spatial
 import operator
 import numpy
+import matplotlib
+matplotlib.use("TkAgg")
 import matplotlib.pyplot as plt
+
 
 with open('data.pickle', 'rb') as handle:
     data = pickle.load(handle)
@@ -14,7 +17,7 @@ with open('data.pickle', 'rb') as handle:
     		deltas[i] = (values[i+1] - values[i]) / values[i]
     	data2[company_id] = deltas
 
-    company = 970
+    company = 419
     a = data2[company]
 
     distances = {}

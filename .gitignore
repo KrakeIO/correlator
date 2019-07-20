@@ -1,1 +1,6 @@
 *.csv
+venv
+ids.txt
+testing.py
+graphing.py
+data.pickle

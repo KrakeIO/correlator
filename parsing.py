@@ -2,6 +2,7 @@ import csv
 from datetime import datetime
 from datetime import timedelta
 import pickle
+import ipdb 
 
 start = '2019-04-01'
 end = '2019-05-31' # inclusive
@@ -23,7 +24,8 @@ with open('daily_trades.csv') as file:
 			try:
 				close = float(close_string)
 			except ValueError,e:
-				print close
+				# ipdb.set_trace()				
+				print e
 			if company_id not in data:
 				data[company_id] = [None] * size
 			if day >= 0 and day < size:

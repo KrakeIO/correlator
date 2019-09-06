@@ -3,9 +3,18 @@ from datetime import datetime
 from datetime import timedelta
 import pickle
 import ipdb 
+import pandas as pd
+import pdb
 
 start = '2019-04-01'
 end = '2019-05-31' # inclusive
+
+file = pd.read_csv('daily_trades.csv',
+				   usecols = ['company_id', 'date_published', 'close'],
+				   parse_dates = ['date_published'], infer_datetime_format = True)
+print(file.head(5))
+pdb.set_trace();
+
 
 with open('daily_trades.csv') as file:
 	reader = csv.reader(file, delimiter=",")

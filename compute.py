@@ -5,6 +5,7 @@ import numpy
 import matplotlib
 matplotlib.use("TkAgg")
 import matplotlib.pyplot as plt
+import pdb
 
 
 with open('data.pickle', 'rb') as handle:
@@ -29,6 +30,8 @@ with open('data.pickle', 'rb') as handle:
     		distances[company_id] = result
 
     sorted_distances = sorted(distances, key=distances.get)
+
+    # pdb.set_trace()
 
     print "Top 5"
     plt.plot(data[company], label = company)

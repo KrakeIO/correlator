@@ -2,5 +2,11 @@
 venv
 ids.txt
 testing.py
-graphing.py
 data.pickle
+getdata.db
+percents.pickle
+postgress.py
+closes.pickle
+correlation.pickle
+long_percents.pickle
+database_percents.pickle
